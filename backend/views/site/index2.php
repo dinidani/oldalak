@@ -6,7 +6,7 @@ $this->title = 'Oldalak Alkamlazás';
 <div class="site-index">
 
     <div class="jumbotron">
-        <p><a class="btn btn-lg btn-success" href="/backend/web/index.php?r=oldalak%2Findex">Oldalak Szerkesztése</a></p>
+        <p><a class="btn btn-lg btn-success" href="/oldalak/backend/web/index.php?r=oldalak%2Findex">Oldalak Szerkesztése</a></p>
     </div>
 
 
