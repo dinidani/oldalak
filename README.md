@@ -14,21 +14,17 @@ cd oldalak
 ./install.sh yii2advanced root root /var/www/test_feladat
 
 
-<Which environment do you want the application to be initialized in?>
-
-<0 for development>
-
-<yes>
+###Which environment do you want the application to be initialized in?
+###0 for development
+###yes
 
 
-<Apply the above migrations>
+###Apply the above migrations
+###yes
 
-<yes>
 
-
-<root password for chown>
-
-<password>
+###root password for chown
+###password
 
 Ezek után a két cím ahol elérhető az oldal:
 
