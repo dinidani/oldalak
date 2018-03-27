@@ -27,3 +27,6 @@ chown -R www-data:www-data ./oldalak/
    config.filebrowserImageUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=images';
    config.filebrowserFlashUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=flash';
 
+http elérés:
+http://localhost/oldalak/backend/web/index.php?r=site%2Flogin
+http://localhost/oldalak/frontend/web/index.php?r=site%2Flogin
