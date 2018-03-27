@@ -72,7 +72,7 @@ cd ..
 
 chown -R www-data:www-data ./oldalak/
 
-## /var/www/html/oldalak/vendor/sunhater/kcfinder/conf/config.php írjuk át
+## /var/www/html/oldalak/vendor/sunhater/kcfinder/conf/config.php írjuk át (ezt majd javítani kell session alapúra !!!)
 
 
 // GENERAL SETTINGS
@@ -91,4 +91,4 @@ http://localhost/oldalak/backend/web/index.php?r=site%2Flogin
 http://localhost/oldalak/frontend/web/index.php?r=site%2Flogin
 
 
-admin / adminpass hozzáféréssel
+admin / adminpass hozzáféréssel (ezt majd javítani kell admin lte alapúra !!!)
