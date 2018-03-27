@@ -9,11 +9,12 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 
     //kcfinder hozzadasa a ckeditorhoz
-   config.filebrowserBrowseUrl = '/oldalak/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=files';
-   config.filebrowserImageBrowseUrl = '/oldalak/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=images';
-   config.filebrowserFlashBrowseUrl = '/oldalak/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=flash';
-   config.filebrowserUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=files';
-   config.filebrowserImageUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=images';
-   config.filebrowserFlashUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=flash';
+    var location = window.location.pathname.split("/")[1];
+    config.filebrowserBrowseUrl = '/'+location+'/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=files';
+    config.filebrowserImageBrowseUrl = '/'+location+'/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=images';
+    config.filebrowserFlashBrowseUrl = '/'+location+'/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=flash';
+    config.filebrowserUploadUrl = '/'+location+'/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=files';
+    config.filebrowserImageUploadUrl = '/'+location+'/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=images';
+    config.filebrowserFlashUploadUrl = '/'+location+'/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=flash';
 
 };
