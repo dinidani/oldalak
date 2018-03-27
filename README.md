@@ -21,7 +21,7 @@ cd oldalak
 <yes>
 
 
-<Apply the above migrations ?>
+<Apply the above migrations>
 
 <yes>
 
