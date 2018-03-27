@@ -1,14 +1,44 @@
-Ami szükséges php7, apache2, mysql5, rewrite_mod, composer
+# Project Teszt feladat, ismerkedés yii2 vel
+Ez egy teszt project, gyakorlás és tanulás a célja
 
-adjuk ki a következő parancsot ahova szeretnénk letölteni az alkalmazast
+## Getting Started
+Ami a telepítéshez szükséges: php7, apache2, mysql5, rewrite_mod, composer
+
+## Installing Telepítő scripttel:
+cd ~
+git clone https://github.com/dinidani/oldalak.git
+cd oldalak
+./install.sh yii2advanced root root /var/www/test_feladat
+
+<Which environment do you want the application to be initialized in?>
+<0 for development>
+<yes>
+
+<Apply the above migrations ?> 
+<yes>
+
+<root password for chown>
+<password>
+
+Ezek után a két cím ahol elérhető az oldal:
+http://localhost/test_feladat/backend/web/index.php
+http://localhost/test_feladat/frontend/web/index.php
+
+Belépés admin / adminpass
+
+*****************************************************************************************
+
+# Installing Telepítés kézzel:
+
+Adjuk ki a következő parancsot ott ahova le szeretnénk letölteni az alkalmazast
 git clone https://github.com/dinidani/oldalak.git
 cd oldalak
 php init
 composer update
-szerkesszük át /oldalak/common/config/main-local.php filet, dbname=yii2advanced, 'password' => 'root'szintaktikaval adjuk meg az sql hozzáférés jelszavát
-mysql segítsgével "yii2advanced" adatbázis létrehozása
+szerkesszük át /oldalak/common/config/main-local.php filet, dbname=yii2advanceddb, 'password' => 'root'szintaktikaval adjuk meg az sql hozzáférés jelszavát
+mysql segítsgével "yii2advanceddb" adatbázis létrehozása
 php yii migrate
-mysql importáljuk a /oldalak/sql/data.sql filet
+mysql importáljuk a /oldalak/config/sql/data.sql filet
 
 cd ..
 chown -R www-data:www-data ./oldalak/
@@ -17,16 +47,11 @@ chown -R www-data:www-data ./oldalak/
 
     'disabled' => false,
 
-/var/www/html/oldalak/vendor/ckeditor/ckeditor/config.js
+cp /var/www/html/oldalak/config/vendor/ckeditor/ckeditor/config.js /var/www/html/oldalak/vendor/ckeditor/ckeditor/config.js
 
-    //kcfinder hozzadasa a ckeditorhoz
-   config.filebrowserBrowseUrl = '/oldalak/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=files';
-   config.filebrowserImageBrowseUrl = '/oldalak/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=images';
-   config.filebrowserFlashBrowseUrl = '/oldalak/vendor/sunhater/kcfinder/browse.php?opener=ckeditor&type=flash';
-   config.filebrowserUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=files';
-   config.filebrowserImageUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=images';
-   config.filebrowserFlashUploadUrl = '/oldalak/vendor/sunhater/kcfinder/upload.php?opener=ckeditor&type=flash';
 
 http elérés:
 http://localhost/oldalak/backend/web/index.php?r=site%2Flogin
 http://localhost/oldalak/frontend/web/index.php?r=site%2Flogin
+
+admin / adminpass hozzáféréssel

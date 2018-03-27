@@ -36,6 +36,7 @@ cat $4/config/sql/data.sql | mysql -D $1 -u$2 -p$3
 cp -f $4/config/vendor/sunhater/kcfinder/conf/config.php $4/vendor/sunhater/kcfinder/conf/config.php
 cp -f $4/config/vendor/ckeditor/ckeditor/config.js $4/vendor/ckeditor/ckeditor/config.js
 
+echo "root password for chown"
 su root -c "chown -R www-data:www-data $4"
  else
     echo "./install.sh mysql_db_name mysq_username mysql_password installdir";
