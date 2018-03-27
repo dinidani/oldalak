@@ -8,7 +8,7 @@ Ez egy teszt project, gyakorlás és tanulás a célja
 Ami a telepítéshez szükséges: php7, apache2, mysql5, rewrite_mod, composer
 
 
-## Installing Telepítő scripttel:
+## Installing Telepítő scripttel: (csak teszteléshez, nincs hibakezelés, debian - bash szintaktika)
 
 cd ~
 
