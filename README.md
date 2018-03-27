@@ -1,10 +1,15 @@
 # Project Teszt feladat, ismerkedés yii2 vel
+
 Ez egy teszt project, gyakorlás és tanulás a célja
 
+
 ## Getting Started
+
 Ami a telepítéshez szükséges: php7, apache2, mysql5, rewrite_mod, composer
 
+
 ## Installing Telepítő scripttel:
+
 cd ~
 
 git clone https://github.com/dinidani/oldalak.git
@@ -15,16 +20,21 @@ cd oldalak
 
 
 Which environment do you want the application to be initialized in?
+
 0 for development
+
 <yes>
 
 
 Apply the above migrations
+
 <yes>
 
 
 root password for chown
+
 <password>
+
 
 Ezek után a két cím ahol elérhető az oldal:
 
@@ -64,13 +74,18 @@ chown -R www-data:www-data ./oldalak/
 
 ## /var/www/html/oldalak/vendor/sunhater/kcfinder/conf/config.php írjuk át
 
+
 // GENERAL SETTINGS
+
     'disabled' => false,
+
 
 cp /var/www/html/oldalak/config/vendor/ckeditor/ckeditor/config.js /var/www/html/oldalak/vendor/ckeditor/ckeditor/config.js
 
 
+
 ## http elérés:
+
 http://localhost/oldalak/backend/web/index.php?r=site%2Flogin
 
 http://localhost/oldalak/frontend/web/index.php?r=site%2Flogin
