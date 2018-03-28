@@ -4,6 +4,17 @@ if [ "$#" -eq  "4" ]
    then
 
 mkdir $4
+if [ $? -eq 0 ]
+then
+    echo "Directory letrehozva"
+else
+    echo "Root tudja letrehozni, adja meg jelszavat" >&2
+    su root -c "mkdir $4"
+fi
+
+exit 0
+
+
 cp -R ./* $4
 cd $4
 php init

@@ -18,6 +18,7 @@ cd oldalak
 
 ./install.sh yii2advanced root root /var/www/test_feladat
 
+Ha root jogosultsag kell a cél alkonyvtar letrehozasahoz bekéri a root jelszavat.
 
 Which environment do you want the application to be initialized in?
 
