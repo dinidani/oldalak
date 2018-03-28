@@ -12,9 +12,6 @@ else
     su root -c "mkdir $4"
 fi
 
-exit 0
-
-
 cp -R ./* $4
 cd $4
 php init
