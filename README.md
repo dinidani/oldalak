@@ -16,7 +16,7 @@ git clone https://github.com/dinidani/oldalak.git
 
 cd oldalak
 
-./install.sh yii2advanced root root /var/www/test_feladat
+./install.sh yii2advanced root root /var/www/test_feladat www-data
 
 Ha root jogosultsag kell a cél alkonyvtar letrehozasahoz bekéri a root jelszavat.
 
@@ -32,7 +32,7 @@ Apply the above migrations
 <yes>
 
 
-root password for chown
+root jelszót bekéri chown számára ha szükséges
 
 <password>
 
