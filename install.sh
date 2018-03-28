@@ -1,15 +1,16 @@
 #!/bin/bash
 
-if [ "$#" -eq  "4" ]
+if [ "$#" -eq  "5" ]
    then
 
-mkdir $4
+mkdir $4 2>/dev/null
 if [ $? -eq 0 ]
 then
     echo "Directory letrehozva"
 else
-    echo "Root tudja letrehozni, adja meg jelszavat" >&2
-    su root -c "mkdir $4"
+    felh=$USER
+    echo "$felh user nem tudja letrehozni, adja meg a root jelszavat" >&2
+    su root -c "mkdir $4 && chown $felh:$felh $4"
 fi
 
 cp -R ./* $4
@@ -44,9 +45,17 @@ cat $4/config/sql/data.sql | mysql -D $1 -u$2 -p$3
 cp -f $4/config/vendor/sunhater/kcfinder/conf/config.php $4/vendor/sunhater/kcfinder/conf/config.php
 cp -f $4/config/vendor/ckeditor/ckeditor/config.js $4/vendor/ckeditor/ckeditor/config.js
 
-echo "root password for chown"
-su root -c "chown -R www-data:www-data $4"
+chown -R $5:$5 $4 2>/dev/null
+if [ $? -eq 0 ]
+then
+    echo "chown lefuttatva"
+else
+    felh=$USER
+    echo "$felh user nem tud chown-olni, adja meg a root jelszavat" >&2
+    su root -c "chown -R $5:$5 $4"
+fi
+
  else
-    echo "./install.sh mysql_db_name mysq_username mysql_password installdir";
-    echo "./install.sh yii2advanced root root /var/www/html/oldalak_test";
+    echo "./install.sh mysql_db_name mysq_username mysql_password installdir www_user";
+    echo "./install.sh yii2advanced root root /var/www/html/oldalak_test www-data";
  fi
