@@ -54,4 +54,5 @@ class Oldalak extends \yii\db\ActiveRecord
             'torzs' => 'Torzs',
         ];
     }
+
 }

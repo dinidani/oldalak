@@ -20,6 +20,17 @@ use yii\widgets\LinkPager;
     </li>
 <BR>
 <iframe width="800" height="350" frameborder="0" srcdoc="<html><body> <?= Html::encode("{$oldal->torzs}")?> </body></html>"></iframe>
+<BR><BR>
+
+<?php
+    $abs_path = Yii::getAlias('@web')."/oldalak";
+    $dir_path = $abs_path."/".$oldal->cim;
+    $file =  $dir_path.'/index.html';
+    echo "<a target=\"_blank\" href=\"http://localhost".$file."\">Oldal Linkje</a>";
+?>
+
+
+
 <?php endforeach; ?>
 </ul>
 

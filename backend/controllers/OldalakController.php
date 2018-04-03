@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\helpers\Url;
 use app\models\Oldalak;
 use app\models\OldalakSearch;
 use yii\web\Controller;
@@ -15,6 +16,9 @@ $_SESSION['KCFINDER'] = array(
     'uploadURL' => "upload",
     'uploadDir' => ""
 );
+
+
+
 
 /**
  * OldalakController implements the CRUD actions for Oldalak model.
@@ -95,6 +99,37 @@ class OldalakController extends Controller
     }
 
     /**
+     * Letrehozza az index html fileokat a megfelelo tartalommal
+     */
+
+    public function savetofile($id)
+    {
+    $model = $this->findModel($id);
+
+    $abs_path = Yii::getAlias('@webroot')."/oldalak";
+    $dir_path = $abs_path."/".$model->cim;
+
+    if (!file_exists($dir_path)) {
+	mkdir($dir_path, 0777, true);
+	}
+
+    $file =  $dir_path.'/index.html';
+
+    $current = "<HTML>\n";
+    $current .= "<HEAD>\n";
+    $current .= "<meta name=\"description\" content=\"".$model->meta_leiras."\">\n";
+    $current .= "<meta name=\"keywords\" content=\"".$model->meta_kulcsszavak."\" />\n";
+    $current .= "</HEAD>\n";
+    $current .= "<BODY>\n";
+    $current .= $model->torzs;
+    $current .= "</BODY>\n";
+    $current .= "</HTML>\n";
+
+    // Write the contents back to the file
+    file_put_contents($file, $current);
+    }
+
+    /**
      * Updates an existing Oldalak model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
@@ -106,6 +141,8 @@ class OldalakController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+	    $this->savetofile($id);
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
