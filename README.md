@@ -10,13 +10,15 @@ Ami a telepítéshez szükséges: php7, apache2, mysql5, rewrite_mod, composer
 
 ## Installing Telepítő scripttel: (csak teszteléshez, nincs hibakezelés, debian - bash szintaktika)
 
-cd ~
+> cd ~
 
-git clone https://github.com/dinidani/oldalak.git
+> git clone https://github.com/dinidani/oldalak.git
 
-cd oldalak
+> cd oldalak
 
-./install.sh yii2advanced root root /var/www/test_feladat www-data
+> ./install.sh yii2advanced root root /var/www/test_feladat www-data
+
+Paraméterek sorban: adatbázis neve , adatbázis user neve, adatbázis user jelszava, web alkönyvtár ahova telepítse, web user neve
 
 Ha root jogosultsag kell a cél alkonyvtar letrehozasahoz bekéri a root jelszavat.
 
@@ -24,17 +26,17 @@ Which environment do you want the application to be initialized in?
 
 0 for development
 
-<yes>
+> yes
 
 
 Apply the above migrations
 
-<yes>
+> yes
 
 
 root jelszót bekéri chown számára ha szükséges
 
-<password>
+> <password>
 
 
 Ezek után a két cím ahol elérhető az oldal:
