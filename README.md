@@ -52,7 +52,7 @@ Belépés admin / adminpass
 
 # Installing Telepítés kézzel:
 
-## Adjuk ki a következő parancsot ott ahova le szeretnénk letölteni az alkalmazast
+## 1.Adjuk ki a következő parancsot ott ahova le szeretnénk letölteni az alkalmazast
 
 > git clone https://github.com/dinidani/oldalak.git
 
@@ -62,20 +62,20 @@ Belépés admin / adminpass
 
 > composer update
 
-## szerkesszük át /oldalak/common/config/main-local.php filet, dbname=yii2advanceddb, 'password' => 'root'szintaktikaval adjuk meg az sql hozzáférés jelszavát
+## 2.szerkesszük át /oldalak/common/config/main-local.php filet, dbname=yii2advanceddb, 'password' => 'root'szintaktikaval adjuk meg az sql hozzáférés jelszavát
 
-## mysql segítsgével "yii2advanceddb" adatbázis létrehozása
+## 3.mysql segítsgével "yii2advanceddb" adatbázis létrehozása
 
 > php yii migrate
 
-## mysql importáljuk a /oldalak/config/sql/data.sql filet
+## 4.mysql importáljuk a /oldalak/config/sql/data.sql filet
 
 
 > cd ..
 
 > chown -R www-data:www-data ./oldalak/
 
-## /var/www/html/oldalak/vendor/sunhater/kcfinder/conf/config.php írjuk át (ezt majd javítani kell session alapúra !!!)
+## 5./var/www/html/oldalak/vendor/sunhater/kcfinder/conf/config.php írjuk át (ezt majd javítani kell session alapúra !!!)
 
 
 // GENERAL SETTINGS
