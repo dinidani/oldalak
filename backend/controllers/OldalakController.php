@@ -90,12 +90,34 @@ class OldalakController extends Controller
         $model = new Oldalak();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+	    $this->savetofile($model->id);
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
         ]);
+    }
+
+
+    public function removedir($id)
+    {
+    $model = $this->findModel($id);
+    $abs_path = Yii::getAlias('@webroot')."/oldalak";
+    $dir = $abs_path."/".$model->cim;
+
+       if (is_dir($dir)) {
+         $objects = scandir($dir);
+         foreach ($objects as $object) {
+           if ($object != "." && $object != "..") {
+             if (is_dir($dir."/".$object))
+               rrmdir($dir."/".$object);
+             else
+               unlink($dir."/".$object);
+	   }
+         }
+	 rmdir($dir);
+       }
     }
 
     /**
@@ -160,6 +182,7 @@ class OldalakController extends Controller
      */
     public function actionDelete($id)
     {
+	$this->removedir($id);
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
