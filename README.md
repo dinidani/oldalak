@@ -18,7 +18,7 @@ Ami a telepítéshez szükséges: php7, apache2, mysql5, rewrite_mod, composer
 
 > ./install.sh yii2advanced root root /var/www/test_feladat www-data
 
-Paraméterek sorban: adatbázis neve , adatbázis user neve, adatbázis user jelszava, web alkönyvtár ahova telepítse, web user neve
+Paraméterek sorban: adatbázis neve , adatbázis user neve, adatbázis user jelszava, web alkönyvtár ahova telepítse, web user neve.
 
 Ha root jogosultsag kell a cél alkonyvtar letrehozasahoz bekéri a root jelszavat.
 
@@ -54,26 +54,26 @@ Belépés admin / adminpass
 
 ## Adjuk ki a következő parancsot ott ahova le szeretnénk letölteni az alkalmazast
 
-git clone https://github.com/dinidani/oldalak.git
+> git clone https://github.com/dinidani/oldalak.git
 
-cd oldalak
+> cd oldalak
 
-php init
+> php init
 
-composer update
+> composer update
 
 ## szerkesszük át /oldalak/common/config/main-local.php filet, dbname=yii2advanceddb, 'password' => 'root'szintaktikaval adjuk meg az sql hozzáférés jelszavát
 
 ## mysql segítsgével "yii2advanceddb" adatbázis létrehozása
 
-php yii migrate
+> php yii migrate
 
 ## mysql importáljuk a /oldalak/config/sql/data.sql filet
 
 
-cd ..
+> cd ..
 
-chown -R www-data:www-data ./oldalak/
+> chown -R www-data:www-data ./oldalak/
 
 ## /var/www/html/oldalak/vendor/sunhater/kcfinder/conf/config.php írjuk át (ezt majd javítani kell session alapúra !!!)
 
@@ -83,7 +83,7 @@ chown -R www-data:www-data ./oldalak/
     'disabled' => false,
 
 
-cp /var/www/html/oldalak/config/vendor/ckeditor/ckeditor/config.js /var/www/html/oldalak/vendor/ckeditor/ckeditor/config.js
+> cp /var/www/html/oldalak/config/vendor/ckeditor/ckeditor/config.js /var/www/html/oldalak/vendor/ckeditor/ckeditor/config.js
 
 
 
